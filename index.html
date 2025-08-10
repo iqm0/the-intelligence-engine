@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Intelligence Engine - Book Preview</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fafafa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .subtitle {
+            font-size: 1.4em;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .author {
+            font-size: 1.2em;
+            opacity: 0.8;
+        }
+
+        nav {
+            background: white;
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #667eea;
+            font-weight: 500;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            background-color: #667eea;
+            color: white;
+        }
+
+        main {
+            padding: 40px 0;
+        }
+
+        .section {
+            background: white;
+            margin: 30px 0;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+
+        .section.hidden {
+            display: none;
+        }
+
+        .section h2 {
+            color: #667eea;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+
+        .section h3 {
+            color: #764ba2;
+            font-size: 1.8em;
+            margin: 30px 0 15px 0;
+        }
+
+        .chapter-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .chapter-card {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 5px solid #667eea;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .chapter-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .chapter-card h4 {
+            color: #667eea;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+
+        .chapter-card .chapter-subtitle {
+            color: #555;
+            font-style: italic;
+            margin-bottom: 15px;
+            font-size: 0.9em;
+        }
+
+        .chapter-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            font-weight: 500;
+            margin-top: 10px;
+        }
+
+        .completed {
+            background-color: #d4edda;
+            color: #155724;
+        }
+
+        .in-progress {
+            background-color: #fff3cd;
+            color: #856404;
+        }
+
+        .planned {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+
+        .intro-text {
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 30px;
+        }
+
+        .key-insights {
+            background: #f8f9ff;
+            border-left: 4px solid #667eea;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .key-insights h4 {
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+
+        .key-insights ul {
+            margin-left: 20px;
+        }
+
+        .key-insights li {
+            margin-bottom: 8px;
+            color: #555;
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 40px 0;
+            margin-top: 60px;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5em;
+            }
+            
+            .nav-links {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .chapter-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .section {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>The Intelligence Engine</h1>
+            <p class="subtitle">How Customer Support Becomes Your Company's Strategic Advantage</p>
+            <p class="author">by Igor Quoos Moreira</p>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <div class="nav-links">
+                <a href="#overview" onclick="showSection('overview')">Overview</a>
+                <a href="#chapters" onclick="showSection('chapters')">Chapters</a>
+                <a href="#progress" onclick="showSection('progress')">Progress</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <div class="container">
+            
+            <section id="overview" class="section">
+                <h2>Book Overview</h2>
+                
+                <div class="intro-text">
+                    <p>Most companies treat customer support as a necessary cost center—a place to handle complaints and close tickets as quickly as possible. This thinking creates a death spiral where support costs scale with business growth while providing diminishing strategic value.</p>
+                    
+                    <p><strong>The Intelligence Engine</strong> reveals a different approach: transforming support from a reactive cost center into a proactive intelligence system that prevents problems, identifies opportunities, and develops talent.</p>
+                </div>
+
+                <div class="key-insights">
+                    <h4>Key Insights</h4>
+                    <ul>
+                        <li><strong>Support as Strategic Intelligence:</strong> Every customer interaction contains data about your business strategy</li>
+                        <li><strong>The Apple System:</strong> What actually makes Apple-level support work (and why most companies get it wrong)</li>
+                        <li><strong>Diagnostic Excellence:</strong> Teaching assumption-testing instead of problem-solving</li>
+                        <li><strong>Product Team Accountability:</strong> Why developers should handle their own support tickets</li>
+                        <li><strong>True Consistency:</strong> Foundational thinking beats memorizing scripts</li>
+                        <li><strong>Scaling Intelligence:</strong> Adapting principles to startup, scale-up, and enterprise organizations</li>
+                        <li><strong>Smart Infrastructure:</strong> Strategic tool selection that enhances rather than replaces human intelligence</li>
+                        <li><strong>Talent Pipeline:</strong> Support teams as your best source of future leaders</li>
+                    </ul>
+                </div>
+
+                <h3>Who This Book Is For</h3>
+                <p class="intro-text">
+                    <strong>Primary audience:</strong> CEOs, CTOs, VPs of Customer Success, and support leaders who want to transform support from cost center to strategic advantage.
+                </p>
+                <p class="intro-text">
+                    <strong>Secondary audience:</strong> Startup founders, product managers, and anyone involved in building customer-centric organizations.
+                </p>
+
+                <h3>What Makes This Different</h3>
+                <p class="intro-text">
+                    This isn't another customer service book about being friendly or following scripts. It's a business strategy guide based on nearly two decades of experience across retail, hospitality, tech companies, and enterprise customers. Every principle is backed by real-world implementation and proven results.
+                </p>
+            </section>
+
+            <section id="chapters" class="section hidden">
+                <h2>Chapters</h2>
+                
+                <div class="chapter-grid">
+                    <div class="chapter-card">
+                        <h4>Chapter 1: Death by a Thousand Cuts</h4>
+                        <p class="chapter-subtitle">How companies slowly kill their strategic intelligence through support mismanagement</p>
+                        <p>The death spiral happens when you treat support as a volume problem instead of an intelligence problem. Companies lose strategic focus by throwing more people at symptoms instead of understanding root causes.</p>
+                        <span class="status-badge completed">Completed</span>
+                    </div>
+
+                    <div class="chapter-card">
+                        <h4>Chapter 2: The Apple Fallacy</h4>
+                        <p class="chapter-subtitle">Why everyone wants "Apple-level support" but completely misunderstands what makes it work</p>
+                        <p>Based on real Apple training experience, this chapter reveals the organizational architecture behind Apple's support system and why most attempts to copy it fail.</p>
+                        <span class="status-badge completed">Completed</span>
+                    </div>
+
+                    <div class="chapter-card">
+                        <h4>Chapter 3: Diagnostic Excellence</h4>
+                        <p class="chapter-subtitle">How to teach assumption-testing instead of problem-solving</p>
+                        <p>The alternative pathway methodology that transforms support from reactive troubleshooting to intelligent investigation. Includes systematic frameworks for testing customer assumptions.</p>
+                        <span class="status-badge completed">Completed</span>
+                    </div>
+
+                    <div class="chapter-card">
+                        <h4>Chapter 4: Product Team Accountability</h4>
+                        <p class="chapter-subtitle">Why developers should handle their own support tickets</p>
+                        <p>The "put them at the door" principle that transforms product quality by making feature builders responsible for supporting what they create.</p>
+                        <span class="status-badge completed">Completed</span>
+                    </div>
+
+                    <div class="chapter-card">
+                        <h4>Chapter 5: True Consistency</h4>
+                        <p class="chapter-subtitle">Why teaching foundational thinking beats memorizing scripts</p>
+                        <p>The brown bear principle and how to build customer empowerment instead of ticket resolution. Moves beyond symptom-matching to root-cause education.</p>
+                        <span class="status-badge completed">Completed</span>
+                    </div>
+
+                    <div class="chapter-card">
+                        <h4>Chapter 6: Scaling Intelligence</h4>
+                        <p class="chapter-subtitle">How to apply Apple's principles at startup, scale-up, and enterprise sizes</p>
+                        <p>Organizational-specific adaptations that leverage your company's unique advantages instead of fighting constraints.</p>
+                        <span class="status-badge completed">Completed</span>
+                    </div>
+
+                    <div class="chapter-card">
+                        <h4>Chapter 7: Support Infrastructure Strategy</h4>
+                        <p class="chapter-subtitle">Why specialized tools + custom solutions beats building everything or buying everything</p>
+                        <p>Strategic approach to support tooling that combines best-of-breed specialized tools with custom business-specific solutions.</p>
+                        <span class="status-badge completed">Completed</span>
+                    </div>
+
+                    <div class="chapter-card">
+                        <h4>Chapter 8: The Talent Pipeline</h4>
+                        <p class="chapter-subtitle">Why support teams are your best source of future leaders</p>
+                        <p>How customer-facing roles develop unique leadership capabilities and systematic pathways for internal promotion to strategic positions.</p>
+                        <span class="status-badge completed">Completed</span>
+                    </div>
+
+                    <div class="chapter-card">
+                        <h4>Chapter 9: Enterprise Psychology</h4>
+                        <p class="chapter-subtitle">Understanding what drives enterprise customer frustration</p>
+                        <p>Advanced frameworks for enterprise client alignment, stakeholder management, and complex organizational dynamics.</p>
+                        <span class="status-badge planned">Planned</span>
+                    </div>
+
+                    <div class="chapter-card">
+                        <h4>Chapter 10: Human vs. Machine Intelligence</h4>
+                        <p class="chapter-subtitle">Strategic decisions about when you need humans in the loop</p>
+                        <p>Decision frameworks for automation vs. human intervention, with emphasis on maintaining intelligence while scaling efficiency.</p>
+                        <span class="status-badge planned">Planned</span>
+                    </div>
+                </div>
+            </section>
+
+            <section id="progress" class="section hidden">
+                <h2>Development Progress</h2>
+                
+                <h3>Completed Chapters (8/10)</h3>
+                <p class="intro-text">The core framework is complete with 8 chapters covering problem identification, solution principles, implementation methodologies, and organizational transformation strategies.</p>
+
+                <div class="key-insights">
+                    <h4>What's Been Accomplished</h4>
+                    <ul>
+                        <li><strong>Problem Framework:</strong> Clear identification of why traditional support approaches fail</li>
+                        <li><strong>Solution Principles:</strong> Real-world examples of what actually works (Apple system)</li>
+                        <li><strong>Core Methodology:</strong> Diagnostic excellence and assumption-testing frameworks</li>
+                        <li><strong>Accountability Systems:</strong> Product team ownership and consistency principles</li>
+                        <li><strong>Scaling Strategies:</strong> Organization-specific adaptations and infrastructure approaches</li>
+                        <li><strong>Talent Development:</strong> Internal leadership pipeline from customer-facing roles</li>
+                    </ul>
+                </div>
+
+                <h3>Remaining Development</h3>
+                <div class="chapter-grid">
+                    <div class="chapter-card">
+                        <h4>Content Completion</h4>
+                        <p>2 additional chapters on enterprise psychology and human vs. machine intelligence to complete the comprehensive framework.</p>
+                        <span class="status-badge planned">Planned</span>
+                    </div>
+
+                    <div class="chapter-card">
+                        <h4>Implementation Tools</h4>
+                        <p>Assessment frameworks, templates, and checklists to support practical application of the principles.</p>
+                        <span class="status-badge planned">Planned</span>
+                    </div>
+
+                    <div class="chapter-card">
+                        <h4>Case Studies</h4>
+                        <p>Additional real-world examples and validation through industry interviews and practitioner feedback.</p>
+                        <span class="status-badge planned">Planned</span>
+                    </div>
+
+                    <div class="chapter-card">
+                        <h4>Publishing Preparation</h4>
+                        <p>Editorial review, professional formatting, and publication strategy development.</p>
+                        <span class="status-badge planned">Planned</span>
+                    </div>
+                </div>
+
+                <h3>Book Statistics</h3>
+                <p class="intro-text">
+                    <strong>Current length:</strong> ~50,000 words across 8 chapters<br>
+                    <strong>Target length:</strong> ~65,000 words (business book standard)<br>
+                    <strong>Completion:</strong> ~80% of core content complete
+                </p>
+            </section>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Igor Quoos Moreira. The Intelligence Engine - Book in Development.</p>
+        </div>
+    </footer>
+
+    <script>
+        function showSection(sectionId) {
+            // Hide all sections
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                section.classList.add('hidden');
+            });
+            
+            // Show selected section
+            document.getElementById(sectionId).classList.remove('hidden');
+            
+            // Update active nav link
+            const navLinks = document.querySelectorAll('.nav-links a');
+            navLinks.forEach(link => {
+                link.style.backgroundColor = '';
+                link.style.color = '#667eea';
+            });
+            
+            event.target.style.backgroundColor = '#667eea';
+            event.target.style.color = 'white';
+        }
+        
+        // Show overview by default
+        document.addEventListener('DOMContentLoaded', function() {
+            showSection('overview');
+        });
+    </script>
+</body>
+</html>

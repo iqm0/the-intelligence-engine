@@ -1,0 +1,45 @@
+# Internal development documents
+book-foundation.md
+themes-and-framework.md
+gaps-and-missing.md
+open-questions.md
+book-todos.md
+content-ready-sections.md
+diagnostic-methodology.md
+MASTER-CONTROL.md
+
+*.pdf
+
+# Individual chapter markdown files (keep only the web versions)
+chapter-*.md
+
+# Ideas and notes
+ideas.txt
+
+# Any personal notes or drafts
+*-notes.md
+*-draft.md
+*-temp.md
+
+# System files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Temporary files
+*.tmp
+*.temp
+*~
+
+# Logs
+*.log
