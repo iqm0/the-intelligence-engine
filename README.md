@@ -2,7 +2,7 @@
 
 **How Customer Support Becomes Your Company's Strategic Advantage**
 
-*by Igor Quoos Moreira*
+*by Igor Q. Moreira*
 
 ## About This Book
 
@@ -41,7 +41,7 @@ Most companies treat customer support as a necessary cost center—a place to ha
 
 ## About the Author
 
-Igor Quoos Moreira brings nearly two decades of customer experience expertise across retail, hospitality, tech companies, and enterprise customers. This book distills proven frameworks from real-world implementation, not theoretical approaches.
+Igor Q. Moreira brings nearly two decades of customer experience expertise across retail, hospitality, tech companies, and enterprise customers. This book distills proven frameworks from real-world implementation, not theoretical approaches.
 
 ## Current Status
 
@@ -62,6 +62,6 @@ This book benefits from real-world validation and feedback. If you're implementi
 
 ## License
 
-© 2025 Igor Quoos Moreira. All rights reserved.
+© 2025 Igor Q. Moreira. All rights reserved.
 
 The web version is made available for preview and feedback purposes. Full publication rights reserved.
